@@ -1,0 +1,28 @@
+{
+  "questions":[
+    {
+      "question":"What is the scientific name of a butterfly?",
+      "answer1": "Apis",
+      "answer2": "Coleoptera",
+      "answer3": "Formicidae",
+      "answer4": "Rhopalocera",
+      "correct": "Rhopalocera"
+    },
+    {
+      "question":"How hot is the surface of the sun?",
+      "answer1": "1,233 K",
+      "answer2": "5,778 K",
+      "answer3": "12,130 K",
+      "answer4": "101,300 K",
+      "correct": "5,778 K"
+    },
+    {
+      "question":"What is the capital of Spain?",
+      "answer1": "Berlin",
+      "answer2": "Buenos Aires",
+      "answer3": "Madrid",
+      "answer4": "San Juan",
+      "correct": "Madrid"
+    }
+  ]
+}
