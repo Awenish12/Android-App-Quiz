@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         String json = "";
         try {
             // Open asset
-            InputStream is = getAssets().open("questions.json");
+            InputStream is = getAssets().open("Questions.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
