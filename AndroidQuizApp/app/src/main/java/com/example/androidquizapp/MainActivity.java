@@ -1,29 +1,34 @@
 package com.example.androidquizapp;
 
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.widget.Button;
+        import android.widget.ImageView;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+        import com.github.barteksc.pdfviewer.PDFView;
+        import com.github.barteksc.pdfviewer.util.FitPolicy;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+        import org.json.JSONArray;
+        import org.json.JSONException;
+        import org.json.JSONObject;
+
+        import java.io.IOException;
+        import java.io.InputStream;
+        import java.nio.charset.StandardCharsets;
+        import java.util.ArrayList;
+        import java.util.Collections;
+        import java.util.List;
 
 
 
 public class MainActivity extends AppCompatActivity {
     TextView question;
     Button answer_1, answer_2, answer_3, answer_4;
+
 
     List<QuestionItem> questionItems;
 
@@ -40,6 +45,20 @@ public class MainActivity extends AppCompatActivity {
         answer_2 = findViewById(R.id.answer2);
         answer_3 = findViewById(R.id.answer3);
         answer_4 = findViewById(R.id.answer4);
+        PDFView pdfView = findViewById(R.id.pdfView);
+        pdfView.fromAsset("jpg2pdf.pdf")
+                .enableDoubletap(true)
+                .defaultPage(0)
+                .enableAntialiasing(true)
+                .pageFitPolicy(FitPolicy.BOTH)
+                .load();
+        PDFView pdfView1 = findViewById(R.id.pdfView4);
+        pdfView1.fromAsset("jpg2pdf4.pdf")
+                .enableDoubletap(true)
+                .defaultPage(0)
+                .enableAntialiasing(true)
+                .pageFitPolicy(FitPolicy.BOTH)
+                .load();
 
         loadQuestion();
 
@@ -139,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
         answer_2.setText(questionItems.get(num).getAnswer2());
         answer_3.setText(questionItems.get(num).getAnswer3());
         answer_4.setText(questionItems.get(num).getAnswer4());
+
 
     }
     private void loadQuestion() {
